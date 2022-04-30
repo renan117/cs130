@@ -108,16 +108,3 @@ footer {
   background: #1cb954;
 }
 
-@media screen and (max-width: 700px) {
-    .player {
-        min-width: 200px;
-        width: auto;
-        margin-left: 30px;
-    }
-    .player #time-elapsed {
-        margin-right: 12px;
-    }
-    .player #time-total {
-        margin-left: 12px;
-    }
-}
