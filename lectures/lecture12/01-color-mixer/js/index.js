@@ -19,6 +19,8 @@ const updateColor = (ev) => {
         document.body.style.backgroundColor = 'yellow';
     } else {
         document.body.style.backgroundColor = 'white';
+    } else if {
+
     }
 
 };
