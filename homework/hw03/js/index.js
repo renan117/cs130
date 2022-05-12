@@ -38,7 +38,7 @@ const initScreen = () => {
             <button class="image" 
                 onclick="handleThumbnailClick(event)"
                 style="background-image:url('${image}')"
-                data-index=${idx}"
+                data-index="${idx}"
                 aria-label="Displays image ${idx} in the main panel."></button>
         </li>`;
     });
@@ -57,7 +57,8 @@ const handleThumbnailClick = ev =>{
     currentIndex = parseInt(elem.dataset.index);
     const bgImage = elem.style.backgroundImage;
     document.querySelector('.featured_image').style.backgroundImage =bgImage;
-    currentIndex = Number(elem.getAttribute("data-index"));
+    currentIndex = Number(elem.getAttribute('data-index'));
+    console.log(currentIndex)
 }
 
 const handleNextClick = ev =>{
