@@ -17,10 +17,49 @@ const search = (ev) => {
 }
 
 const getTracks = (term) => {
+    document.querySelector("#tracks").innerHTML = "";
     console.log(`
         get tracks from spotify based on the search term
         "${term}" and load them into the #tracks section 
         of the DOM...`);
+    fetch('https://www.apitutor.org/spotify/simple/v1/search?type=track&q=' + term)
+    .then(response => response.json())
+    .then(tracks => {
+            console.log(tracks);
+        if (tracks.length == 0){
+            document.querySelector('#tracks').innerHTML = `
+                <p>No tracks found for ${term}</p>
+            `;
+        }
+        
+            counter = 0;
+        
+            for (const track of tracks){
+        //     document.querySelector('#tracks').innerHTML += `
+        //     <p>${track.name}</p>
+        // `;
+        document.querySelector('#tracks').innerHTML += `
+        <button class="track-item preview" data-preview-track="${track.preview_url}">
+        <img src="${track.album.image_url}">
+        <i class="fas fa-play play-track" aria-hidden="true"></i>
+        <div class="label">
+            <h2>"${track.name}"</h2>
+            <p>
+                "${track.artist.name}"
+            </p>
+        </div>
+    </button>
+        `;
+
+
+        counter += 1;
+        if (counter >= 5)
+        break
+            console.log(`
+                <p>${track.name}</p>
+            `)
+        }
+    })
 };
 
 const getAlbums = (term) => {
