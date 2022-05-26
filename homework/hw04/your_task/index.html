@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <title>Spotify Player</title>
         <link rel="stylesheet" href="style.css">
@@ -21,11 +21,13 @@
 
         <main>
             <header>
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" aria-label="Search for Artists, Songs, or Albums"></i>
                 <input type="search" 
                     placeholder="Search for Artists or Songs" 
                     id="search" 
-                    value="" />
+                    value="" 
+                    />
+                    <label for = "search" id="searchlabel" aria-label="Search for Artists, Songs, or Albums">"Search for Artists, Songs, or Albums"</label>
             </header>
             <article id="featured-content">
                 <section id="artist-section">

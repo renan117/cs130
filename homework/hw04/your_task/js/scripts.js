@@ -39,8 +39,8 @@ const getTracks = (term) => {
         //     <p>${track.name}</p>
         // `;
         document.querySelector('#tracks').innerHTML += `
-        <button class="track-item preview" data-preview-track="${track.preview_url}">
-        <img src="${track.album.image_url}">
+        <button class="track-item preview" data-preview-track="${track.preview_url}" onclick="handleTrackClick(event)" aria-label="Preview Track">
+        <img src="${track.album.image_url}" alt="Track image for ${track.name}">
         <i class="fas fa-play play-track" aria-hidden="true"></i>
         <div class="label">
             <h2>"${track.name}"</h2>
@@ -50,7 +50,18 @@ const getTracks = (term) => {
         </div>
     </button>
         `;
-
+        if (track.preview_url == null) {
+            const labels= document.getElementsByClassName("label");
+            labels[labels.length-1].innerHTML =""
+            labels[labels.length-1].innerHTML +=` <h2>${track.name}</h2>
+            <p>
+            "${track.artist.name}" (preview not availible)
+        </p>
+        
+       `
+       const playTracks= document.getElementsByClassName("play-track");
+       playTracks[playTracks.length-1].style.display = "none";
+    };
 
         counter += 1;
         if (counter >= 5)
@@ -67,6 +78,50 @@ const getAlbums = (term) => {
         get albums from spotify based on the search term
         "${term}" and load them into the #albums section 
         of the DOM...`);
+        document.querySelector("#albums").innerHTML ="";
+        fetch('https://www.apitutor.org/spotify/simple/v1/search?type=album&q=' + term)
+        .then(response => response.json())
+        .then(albums => {
+                console.log(albums);
+            if (albums.length == 0){
+                document.querySelector('#albums').innerHTML = `
+                    <p>No albums found for ${term}</p>
+                `;
+            }
+            
+                // counter = 0;
+            
+                for (const album of albums){
+            //     document.querySelector('#tracks').innerHTML += `
+            //     <p>${track.name}</p>
+            // `;
+            document.querySelector('#albums').innerHTML += `
+        
+            <section class="album-card" id ="${album.id}">
+            <div>
+            <img src="${album.image_url}" alt="Album cover for ${album.name}">
+            <div class="label">
+                <h2>"${album.name}"</h2>
+                <div class="footer">
+            <a href="${album.spotify_url}" target="_blank">
+                view on spotify
+            </a>
+        </div>
+            </div>
+            </div>
+            </section>
+        
+            `;
+    
+    
+            // counter += 1;
+            // if (counter >= 5)
+            // break
+            //     console.log(`
+            //         <p>${album.name}</p>
+            //     `)
+            }
+        })
 };
 
 const getArtistHTML = (artist) => {
@@ -75,7 +130,7 @@ const getArtistHTML = (artist) => {
     }
     return `<section class="artist-card" id="${artist.id}">
     <div>
-        <img src="${artist.image_url}">
+        <img src="${artist.image_url}" alt="Artist picture of ${artist.name}">
         <h2>${artist.name}</h2>
         <div class="footer">
             <a href="${artist.spotify_url}" target="_blank">
@@ -108,7 +163,15 @@ const getArtist = (term) => {
 const handleTrackClick = (ev) => {
     const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
     console.log(previewUrl);
+    audioPlayer.setAudioFile(previewUrl);
+    audioPlayer.play();
 }
+
+// document.querySelector("#tracks").onclick = handleTrackClick;
+
+
+
+
 
 document.querySelector('#search').onkeyup = (ev) => {
     // Number 13 is the "Enter" key on the keyboard
@@ -118,3 +181,5 @@ document.querySelector('#search').onkeyup = (ev) => {
         search();
     }
 };
+
+
