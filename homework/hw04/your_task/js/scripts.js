@@ -42,16 +42,16 @@ const getTracks = (term) => {
         <button class="track-item preview" data-preview-track="${track.preview_url}" onclick="handleTrackClick(event)" aria-label="Preview Track">
         <img src="${track.album.image_url}" alt="Track image for ${track.name}">
         <i class="fas fa-play play-track" aria-hidden="true"></i>
-        <div class="label">
-            <h2>"${track.name}"</h2>
+        <div class="label track-label">
+            <h2>${track.name}</h2>
             <p>
-                "${track.artist.name}"
+                ${track.artist.name}
             </p>
         </div>
     </button>
         `;
         if (track.preview_url == null) {
-            const labels= document.getElementsByClassName("label");
+            const labels= document.getElementsByClassName("track-label");
             labels[labels.length-1].innerHTML =""
             labels[labels.length-1].innerHTML +=` <h2>${track.name}</h2>
             <p>
@@ -101,7 +101,7 @@ const getAlbums = (term) => {
             <div>
             <img src="${album.image_url}" alt="Album cover for ${album.name}">
             <div class="label">
-                <h2>"${album.name}"</h2>
+                <h2>${album.name}</h2>
                 <div class="footer">
             <a href="${album.spotify_url}" target="_blank">
                 view on spotify
@@ -165,7 +165,41 @@ const handleTrackClick = (ev) => {
     console.log(previewUrl);
     audioPlayer.setAudioFile(previewUrl);
     audioPlayer.play();
-}
+    
+    
+    
+    
+    
+    
+    
+    const footerHead = ev.currentTarget.getElementsByTagName("h2")
+    const footPara = ev.currentTarget.getElementsByTagName("p")
+    const footImage = ev.currentTarget.getElementsByTagName("img")
+
+
+      document.querySelector("#current-track").innerHTML ="";
+    document.querySelector("#current-track").innerHTML += `
+    <img src="${footImage[0].src}" alt="Track image for ${footerHead[0].innerText}">
+    <div class="label">
+    <h2>${footerHead[0].innerText}</h2>
+    <p>
+        ${footPara[0].innerText}
+    </p>
+    </div>
+    `;
+
+    // document.querySelector("#current-track").innerHTML ="";
+    // document.querySelector("#current-track").innerHTML += `
+    // <div class="label">
+    // <h2>"${track.name}"</h2>
+    // <p>
+    //     "${track.artist.name}"
+    // </p>
+    // </div>
+    // `;
+
+};
+
 
 // document.querySelector("#tracks").onclick = handleTrackClick;
 
