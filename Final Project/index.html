@@ -7,28 +7,44 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     </head>
     <body>
-     <header class="fp-header">
-        <h3>Hi! I'm</h3>
-        <h1>Renan Dennig</h1>     
-        <h2>Welcome to my website!</h2>
-        <h3>Please find pages on the navigation bar below.</h3>
+        <nav id="navbar">
+            <button class="biob"><a href="#bio"><i class="fa-solid fa-user-large"></i> Bio</a></button>
+            <button class="blogb"><a href="blog.html"><i class="fa-solid fa-pen"></i> Blog</a></button>
+            <button class="musicb"><a href="music.html"><i class="fa-solid fa-headphones-simple"></i> Music</a></button>
+            <button class="photosb"><a href="photos.html"><i class="fa-solid fa-image"></i> Photos</a></button>
+        </nav>
+        <header class="fp-header">
+        <div id="hpart1">
+            <h3>Hi! I'm</h3>
+            <h1>Renan <br> Dennig</h1>     
+        </div>
+        <div id="hpart2">
+            <h2>Welcome to my website!</h2>
+            <h3>Scroll down to read my bio!</h3>
+        </div>
      </header>   
-    <nav>
-        <button><a href="#bio">Bio</a></button>
-        <button><a href="blog.html">Blog</a></button>
-        <button><a href="music.html">Music</a></button>
-        <button><a href="photos.html">Photos</a></button>
-    </nav>
     <article id="bio">
-
+        <h1>Bio</h1>
+        <p>I'm currently a junior at Northwestern University in Evanston Illinois.  </p>
     </article>
     <footer class="contact">
+    <div class="contact-list">
         <h3>Contact Info</h3>
-        <ul class="contact-list">
+        <ul>
+            <li title="Renan's Phone Number"><i class="fa-solid fa-phone"></i> Phone Number: (505)-977-5233 </li>
+            <li><i class="fa-regular fa-envelope"></i> School Email: <a href="mailto:renandennig@u.northwestern.edu" title="Renan's School Email Adress">renandennig@u.northwestern.edu</a></li>
+            <li><i class="fa-regular fa-envelope"></i> Personal Email: <a href="mailto:renandennig@gmail.com" title="Renan's Personal Email Adress">renandennig@gmail.com</a></li>
+        </ul>
+    </div>
+    <!-- <a href="#navbar" title="Return to Top"><i class="fa-solid fa-arrow-up"></i>Return to Top of Page</a> -->
+        <div class="follow-me">
+        <h3>Follow Me</h3>
+        <ul>
             <li><i class="fa-brands fa-instagram"></i> Instagram: <a href="https://www.instagram.com/renandennig/" title="Link to Renan's Instagram">@renandennig</a></li>
             <li><i class="fa-solid fa-code-branch"></i> GitHub: <a href="https://github.com/renan117" title="Link to Renan's GitHub">renan117</a> </li>
-            <li><i class="fa-regular fa-envelope"></i> Email: <a href="mailto:renandennig@u.northwestern.edu" title="Renan's Email Adress">renandennig@u.northwestern.edu</a></li>
+            <li><i class="fa-brands fa-linkedin-in"></i> LinkedIn: <a href="https://www.linkedin.com/in/renandennig/" title="Renan's LinkedIn">renandennig</a></li>
         </ul>
+        </div>
     </footer>
     </body>
 </html>

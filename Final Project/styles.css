@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,600;1,400&family=Mukta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,600;1,400&family=Mukta:wght@300&family=Roboto:wght@900&display=swap');
 
 body, html {
     margin: 0%;
@@ -10,37 +10,41 @@ body, html {
 }
 
 .fp-header {
-    background-image: url(images/renan.jpg);
-    filter: grayscale(55%);
+    background-image: url(images/renan\ edit.jpeg);
+    filter: grayscale(45%);
     /* filter: brightness(50%); */
     background-position: center center;
-    height: 80vh;
+    height: 90vh;
     width: 100vw;
     background-size: cover;
     resize: both;
     color: azure;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     font-family: 'Asap', sans-serif;
     -webkit-text-stroke: 1px black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: 10vh;
 }
+
 
 .fp-header h1 {
     font-weight: 600;
-    font-size: 30pt;
+    font-size: 60pt;
     margin-top: 2px;
 }
 
 .fp-header h2 {
     font-weight: 600;
+    font-size: 20pt;
 }
 
 .fp-header h3 {
     font-weight: 400;
     font-style: italic;
     margin-bottom: 2px;
+    font-size: 20pt;
 }
 
 nav {
@@ -52,18 +56,77 @@ nav {
     justify-content: center;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
+#navbar button {
+    font-size: larger;
+    font-family: 'Mukta', sans-serif;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    width: 100px;
+    background-color: rgb(199, 199, 199);
+    box-shadow: inset 0 0 0 0 rgb(239, 239, 239);
+    transition: ease-in-out .2s;
+}
+
+#navbar button a {
+    color: black;
+}
+
+#navbar button:hover {
+    box-shadow: inset 100px 0 0 0 rgb(239, 239, 239);   
+}
+
+a:visited {
+    color: blue;
+}
+
+#bio {
+    background-color:rgb(50, 50, 50);
+}
+
+#bio h1 {
+    background-color: rgb(0, 140, 255);
+    text-align: center;
+    border-color: rgb(199, 199, 199);
+    border-style: solid;
+    border-width: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40pt;
+    margin: 0%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#bio p {
+    padding: 100px;
+    background-color:rgb(199, 199, 199);
+    margin: 10%;
+}
 
 .contact {
     background-color: rgb(199, 199, 199);
     width: 100%;    
     font-family: 'Mukta', sans-serif;
-    height: 20vh;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
 }
 
 .contact-list{
     list-style: none;
+}
+
+.follow-me {
+    padding-right: 20px;
 }
 
 .contact h3 {
@@ -76,4 +139,24 @@ nav {
     padding: 2px;
 }
 
+
+/* Blog CSS */
+
+#blogsec h1 {
+    background-color: rgb(0, 140, 255);
+    text-align: center;
+    border-color: rgb(199, 199, 199);
+    border-style: solid;
+    border-width: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40pt;
+    margin: 0%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/* Photos CSS */
+
+/* Music CSS  */
 
