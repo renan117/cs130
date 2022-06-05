@@ -1,0 +1,106 @@
+/* Music CSS  */
+
+#musictitle {
+    margin-top: 10vh;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(199, 199, 199);
+}
+
+#songsection {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.songcard {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    width: auto;
+    border-radius: 20px;
+    margin: 5%;
+    padding: 4%;
+    font-family: "Asap", sans-serif;
+}
+
+.songcard:hover {
+    box-shadow: 5px 5px 5px;
+}
+
+#songsection i {
+    font-size: 250px;
+}
+
+
+#songsection img {
+    height: 250px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.stext {
+    margin-left: 30px;
+}
+
+.stext h2 {
+    font-size: 40pt;
+}
+
+.stext p {
+    font-size: 30pt;
+}
+
+.stext a {
+    color: black;
+    text-decoration: none;
+}
+
+.stext a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+#scard1 {
+    background-color: #FFCC33;
+}
+
+#scard2 {
+    background-color: #FF355E;
+}
+
+#scard3 {
+    background-color: #FFFF66;
+}
+
+#scard4 {
+    background-color: #50BFE6;
+}
+
+#scard5 {
+    background-color: #66FF66;
+}
+
+#scard6 {
+    background-color: #EE34D2;
+}
+
+#scard7 {
+    background-color: #FF6037;
+}
+
+#scard8 {
+    background-color: #CCFF00;
+}
+
+#scard9 {
+    background-color: #AAF0D1;
+}
+
+#scard10 {
+    background-color: #FF00CC;
+}

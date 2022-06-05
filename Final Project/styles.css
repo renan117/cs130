@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,600;1,400&family=Mukta:wght@300&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,600;1,400&family=Mukta:wght@300&family=Roboto:wght@900&family=Tiro+Devanagari+Sanskrit&display=swap');
 
 body, html {
     margin: 0%;
@@ -26,25 +26,29 @@ body, html {
     align-items: flex-end;
     flex-direction: column;
     margin-top: 10vh;
+    padding-right: 10vw;
 }
 
 
 .fp-header h1 {
     font-weight: 600;
-    font-size: 60pt;
+    font-size: 80pt;
     margin-top: 2px;
+    text-shadow: 2px 2px black;
 }
 
 .fp-header h2 {
     font-weight: 600;
-    font-size: 20pt;
+    font-size: 30pt;
+    text-shadow: 2px 2px black;
 }
 
 .fp-header h3 {
     font-weight: 400;
     font-style: italic;
     margin-bottom: 2px;
-    font-size: 20pt;
+    font-size: 30pt;
+    text-shadow: 2px 2px black;
 }
 
 nav {
@@ -76,6 +80,7 @@ nav {
 
 #navbar button a {
     color: black;
+    text-decoration: none;
 }
 
 #navbar button:hover {
@@ -86,8 +91,14 @@ a:visited {
     color: blue;
 }
 
+#biosection {
+    position: absolute;
+    top: -10vh;
+}
+
 #bio {
-    background-color:rgb(50, 50, 50);
+    /* background-color:rgb(50, 50, 50); */
+    position: relative;
 }
 
 #bio h1 {
@@ -97,16 +108,30 @@ a:visited {
     border-style: solid;
     border-width: 5px;
     font-family: 'Roboto', sans-serif;
-    font-size: 40pt;
+    font-size: 50pt;
     margin: 0%;
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-#bio p {
+#fpphoto {
+    border-radius: 50%;
+    width: 300px;
+    margin: 10px;
+    margin-right: 20px;
+    float: left;
+}
+
+#btext {
     padding: 100px;
-    background-color:rgb(199, 199, 199);
+    background-color:#fff1d0;
     margin: 10%;
+}
+
+#bio p {
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: "TiroDevanagarSanskrit", sans-serif;
 }
 
 .contact {
@@ -140,23 +165,8 @@ a:visited {
 }
 
 
-/* Blog CSS */
-
-#blogsec h1 {
-    background-color: rgb(0, 140, 255);
-    text-align: center;
-    border-color: rgb(199, 199, 199);
-    border-style: solid;
-    border-width: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 40pt;
-    margin: 0%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
 
 
-/* Photos CSS */
 
-/* Music CSS  */
+
 

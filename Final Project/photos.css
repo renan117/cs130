@@ -1,0 +1,125 @@
+/* Photos CSS */
+
+#phototitle {
+    margin-top: 10vh;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(199, 199, 199);
+}
+
+body {
+    height:100%;
+    margin:0;
+    padding:0;
+}
+body * {
+    box-sizing: border-box;
+    /* border: solid 1px #000; */
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 20vh;
+    grid-template-areas:
+      "top"
+      "bottom";
+    height: 100vh;
+    width: 100vw;
+}
+#featured {
+    grid-area: top;
+}
+.cards {
+    grid-area: bottom;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    list-style: none;
+    background-color: rgb(0, 140, 255);
+}
+.card {
+    width: 12.5%;
+    height: 100%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    background-color: rgb(0, 140, 255);
+}
+.image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+}
+.image.active {
+    border: solid 5px black;
+}
+
+.image:hover {
+    opacity: 0.7;
+}
+
+
+.preview_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.featured_image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-color: #fff1d0;
+}
+
+.next, .prev, .close {
+    position: absolute;
+    color: white;
+    border-width: 0px;
+    font-size: 2.5em;
+}
+.next, .prev {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    padding-bottom: 5px;
+}
+.next:hover, .prev:hover, .close:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+.prev {
+    top: 35vh;
+    left: 2vw;
+}
+.next {
+    top: 35vh;
+    right: 2vw;
+}
+
+
+
+
+/* Media Queries */
+@media (max-width: 800px) {
+    main {
+        grid-template-rows: 1fr;
+        grid-template-areas:
+          "top";
+    }
+    main .cards { display: none; }
+}
+
+
+
+
