@@ -2,13 +2,13 @@ let currentIndex = 0;
 
 const images = [
     'images/fam1.jpeg',
-    'images/rwdo.jpg',
+    'images/rwdo.JPG',
     'images/grad1.jpeg',
     'images/grad2.jpeg',
-    'images/rwd.jpg',
-    'images/rwm.jpg',
-    'images/rwy.jpg',
-    'images/thanks.jpg'
+    'images/rwd.JPG',
+    'images/rwm.JPG',
+    'images/rwy.JPG',
+    'images/thanks.JPG'
 ];
 
 const initScreen = () => {
